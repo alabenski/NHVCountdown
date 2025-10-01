@@ -1,0 +1,139 @@
+:root{
+  --bg: #111;
+  --title-color: #e6b518;
+  --count-color: #ffea3b;
+  --muted: #d9d9d9;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--bg);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--muted);
+  overflow: hidden;
+
+  /* Remove flex centering */
+  display: block;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 80px;    /* space from top */
+  padding-bottom: 40px; /* optional spacing below */
+}
+
+.title {
+  font-weight: 900;
+  color: var(--title-color);
+  font-size: clamp(4rem, 8vw, 7rem);
+  margin-bottom: 50px; /* space below title */
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-shadow: 0 6px 25px rgba(0,0,0,0.75);
+}
+
+
+
+
+#count-label {
+  font-size: clamp(1.25rem, 2.2vw, 2.2rem);
+  margin-bottom: 16px; /* more space between label and countdown */
+  color: #ffffff;
+  opacity: 0.9;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+#countdown {
+  font-weight: 800;
+  color: var(--count-color);
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 34px;
+  line-height: 1;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.8);
+  letter-spacing: 0.02em;
+}
+
+#progress-container{
+  width: min(900px, 85%);
+  height: 56px;
+  margin: 0 auto;
+  background: #2b2b2b;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  display: none;
+}
+
+#progress-bar{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, #ffd54f, #ffeb3b 60%, #fdd835 100%);
+  transition: width 0.6s linear;
+}
+
+#progress-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:#111;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  pointer-events: none;
+}
+
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Settings screen */
+.settings {
+  text-align: center;
+  color: #fff;
+}
+
+.settings h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f5c518;
+}
+
+.settings label {
+  font-size: 1.2rem;
+}
+
+.settings input {
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  margin-left: 10px;
+}
+
+.settings button {
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#save-btn { background: #4caf50; color: #fff; }
+#back-btn { background: #f44336; color: #fff; }
+
+@media (max-width:480px){
+  #countdown{font-size: clamp(2.2rem, 9.5vw, 3.8rem);}
+  .title { font-size: clamp(2.2rem, 7.5vw, 3.6rem);}
+  #progress-container { height: 44px; }
+}

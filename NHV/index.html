@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NHV Fuck Ah Countdown</title>
+
+  <!-- Professional font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Main countdown/progress view -->
+  <div class="container" id="main-view">
+    <h1 class="title">NHV Fuck Ah Countdown</h1>
+
+    <div id="count-label">Next NHV Class In:</div>
+    <div id="countdown" aria-live="polite"></div>
+
+    <div id="progress-container" aria-hidden="true">
+      <div id="progress-bar"></div>
+      <div id="progress-text"></div>
+    </div>
+  </div>
+
+  <!-- Hidden settings screen -->
+  <div class="settings" id="settings-view" style="display:none;">
+    <h2>⚙️ NHV Settings</h2>
+    <label>
+      Class Start Time: 
+      <input type="time" id="start-time" value="15:00">
+    </label>
+    <br><br>
+    <label>
+      Class End Time: 
+      <input type="time" id="end-time" value="15:50">
+    </label>
+    <br><br>
+    <button id="save-btn">Save</button>
+    <button id="back-btn">Back</button>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
