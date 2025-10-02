@@ -55,16 +55,16 @@ window.addEventListener('resize',resizeCanvas); resizeCanvas();
 /* Class start/end helpers */
 function setToClassStart(date){ const d=new Date(date); d.setHours(CLASS_HOUR,CLASS_MINUTE,0,0); return d; }
 function setToClassEnd(date){ const d=new Date(date); d.setHours(CLASS_END_HOUR,CLASS_END_MINUTE,0,0); return d; }
-function findNextClass(now){
-  const today=new Date(now);
-  const day=today.getDay();
-  const todayStart=setToClassStart(today);
-  const todayEnd=setToClassEnd(today);
-  if(CLASS_DAYS.includes(day)&&now<todayEnd){ return {start:todayStart,end:todayEnd,isToday:true}; }
-  let candidate=new Date(today);
-  for(let i=1;i<=14;i++){ candidate.setDate(today.getDate()+i); if(CLASS_DAYS.includes(candidate.getDay())) return {start:setToClassStart(candidate),end:setToClassEnd(candidate),isToday:false}; }
-  return {start:setToClassStart(today),end:setToClassEnd(today),isToday:false};
+let candidate=new Date(today);
+for (let i = 1; i <= 14; i++) {
+  const candidate = new Date(today); // reset each iteration
+  candidate.setDate(today.getDate() + i);
+  if (CLASS_DAYS.includes(candidate.getDay())) {
+    return { start: setToClassStart(candidate), end: setToClassEnd(candidate), isToday: false };
+  }
 }
+
+
 
 /* Confetti */
 let confettiPieces=[], confettiActive=false, confettiEndTime=0, rafId=null;
