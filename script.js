@@ -3,7 +3,7 @@ let CLASS_HOUR = 15;
 let CLASS_MINUTE = 0;
 let CLASS_END_HOUR = 15;
 let CLASS_END_MINUTE = 50;
-const CLASS_DAYS = [1,3,4];
+const CLASS_DAYS = [1,3,5];
 
 /* DOM Elements */
 const COUNT_LABEL = document.getElementById('count-label');
