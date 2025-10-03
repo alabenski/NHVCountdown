@@ -1,4 +1,3 @@
-
 /* --- CONFIG (can be changed in settings) --- */
 let CLASS_HOUR = 15;
 let CLASS_MINUTE = 0;
@@ -78,14 +77,12 @@ function findNextClass(now){
   const todayStart=setToClassStart(today);
   const todayEnd=setToClassEnd(today);
 
-  // If today is a class day and we haven't passed class end yet
   if(CLASS_DAYS.includes(day) && now < todayEnd){
     return {start:todayStart,end:todayEnd,isToday:true};
   }
 
-  // Look up to 2 weeks ahead for the next class
   for (let i = 1; i <= 14; i++) {
-    const candidate = new Date(today); // fresh copy each loop
+    const candidate = new Date(today);
     candidate.setDate(today.getDate() + i);
     if (CLASS_DAYS.includes(candidate.getDay())) {
       return { 
@@ -96,7 +93,6 @@ function findNextClass(now){
     }
   }
 
-  // Fallback: return today's times
   return {start:todayStart,end:todayEnd,isToday:false};
 }
 
@@ -164,7 +160,7 @@ function updateOnce(){
     PROG_BAR.style.width=percent.toFixed(2)+'%';
     PROG_TEXT.textContent=`${percent.toFixed(1)}% Through Class`;
     if(percent>=100&&!confettiActive) startConfetti();
-  } else{
+  } else {
     COUNT_LABEL.style.display='block';
     COUNTDOWN.style.display='block';
     PROG_CONTAINER.style.display='none';
@@ -180,4 +176,3 @@ function updateOnce(){
 }
 updateOnce(); 
 setInterval(updateOnce,1000);
-```
