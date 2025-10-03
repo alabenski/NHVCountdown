@@ -1,12 +1,13 @@
-:root{
+:root {
   --bg: #111;
   --title-color: #e6b518;
   --count-color: #ffea3b;
   --muted: #d9d9d9;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%;}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
 body {
   margin: 0;
   height: 100%;
@@ -14,8 +15,6 @@ body {
   font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: var(--muted);
   overflow: hidden;
-
-  /* Remove flex centering */
   display: block;
 }
 
@@ -24,26 +23,23 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding-top: 80px;    /* space from top */
-  padding-bottom: 40px; /* optional spacing below */
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .title {
   font-weight: 900;
   color: var(--title-color);
   font-size: clamp(4rem, 8vw, 7rem);
-  margin-bottom: 50px; /* space below title */
+  margin-bottom: 50px;
   line-height: 1.1;
   letter-spacing: 0.05em;
   text-shadow: 0 6px 25px rgba(0,0,0,0.75);
 }
 
-
-
-
 #count-label {
   font-size: clamp(1.25rem, 2.2vw, 2.2rem);
-  margin-bottom: 16px; /* more space between label and countdown */
+  margin-bottom: 16px;
   color: #ffffff;
   opacity: 0.9;
   text-shadow: 0 3px 8px rgba(0,0,0,0.6);
@@ -59,7 +55,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-#progress-container{
+#progress-container {
   width: min(900px, 85%);
   height: 56px;
   margin: 0 auto;
@@ -71,21 +67,21 @@ body {
   display: none;
 }
 
-#progress-bar{
-  height:100%;
-  width:0%;
+#progress-bar {
+  height: 100%;
+  width: 0%;
   background: linear-gradient(90deg, #ffd54f, #ffeb3b 60%, #fdd835 100%);
   transition: width 0.6s linear;
 }
 
-#progress-text{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:800;
-  color:#111;
+#progress-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #111;
   font-size: clamp(1.1rem, 2vw, 1.6rem);
   pointer-events: none;
 }
@@ -132,8 +128,8 @@ body {
 #save-btn { background: #4caf50; color: #fff; }
 #back-btn { background: #f44336; color: #fff; }
 
-@media (max-width:480px){
-  #countdown{font-size: clamp(2.2rem, 9.5vw, 3.8rem);}
-  .title { font-size: clamp(2.2rem, 7.5vw, 3.6rem);}
+@media (max-width:480px) {
+  #countdown { font-size: clamp(2.2rem, 9.5vw, 3.8rem); }
+  .title { font-size: clamp(2.2rem, 7.5vw, 3.6rem); }
   #progress-container { height: 44px; }
 }
